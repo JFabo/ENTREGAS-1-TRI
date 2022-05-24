@@ -1,0 +1,343 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    padding: 0;
+    margin: 0;
+    font-family: consolas;
+}
+
+body{
+    background: #262626;
+}
+
+.start, .playboard, .reload{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease;
+}
+
+.start{
+    background: #3d3d3d;
+    padding: 20px 25px 25px;
+    border-radius: 5px;
+    color: #fff;
+    max-width: 330px;
+    width: 100%;
+}
+
+.start.hide{
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%) scale(0.9);
+}
+
+.start header{
+    font-size: 23px;
+    font-weight: 600;
+    padding-bottom: 10px;
+}
+
+.start .title{
+    font-size: 16px;
+    font-weight: 500;
+    margin: 20px 0;
+    justify-content: center;
+}
+
+.start .playbttn{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.playbttn button{
+    width: 100%;
+    padding: 8px 0;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.playbttn button:hover,
+.reload .btn button:hover{
+    transform: scale(0.95);
+}
+
+.playboard{
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%) scale(0.9);
+}
+
+.playboard.show{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.playboard .details{
+    background: #fff;
+    padding: 7px;
+    border-radius: 5px;
+}
+
+.playboard .details .game{
+    display: flex;
+    width: 100%;
+    position: relative;
+    justify-content: space-between;
+} 
+
+.playboard .details span{
+    width: 100%;
+    color: #3d3d3d;
+    border-radius: 5px;
+    padding: 7px 0;
+    font-size: 19px;
+    font-weight: 500;
+    cursor: default;
+    text-align: center;
+    position: relative;
+    z-index: 5;
+    transition: all 0.3s ease;
+} 
+
+.details span:first-child{
+    color: #fff;
+}
+
+.details .slider{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 50%;
+    background: #3d3d3d;
+    border-radius: 5px;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+.game.active span.Jogador{
+    color: #262626;
+}
+
+.game.active span.Computers{
+    color: #fff;
+}
+
+.game.active .slider{
+    left: 50%;
+}
+
+.playboard .gamearea{
+    margin-top: 20px;
+
+}
+
+.playboard section{
+    display: flex;
+}
+
+.playboard section span{
+    display: block;
+    margin: 2px;
+    height: 80px;
+    width: 80px;
+}
+
+.box2{
+    border-left: 40px solid #262626;
+    border-right: 40px solid #262626;
+    border-bottom: 80px solid #4350fa;
+}
+
+.box4{
+    border-left: 40px solid #262626;
+    border-right: 40px solid #262626;
+    border-bottom: 80px solid #fa4347;
+    transform: rotate(270deg);
+}
+
+.box6{
+    border-left: 40px solid #262626;
+    border-right: 40px solid #262626;
+    border-bottom: 80px solid #6df789;
+    transform: rotate(90deg);
+}
+
+.box8{
+    border-left: 40px solid #262626;
+    border-right: 40px solid #262626;
+    border-top: 80px solid #f7d26d;
+}
+
+.box2.branco, .box4.branco, .box6.branco{
+    animation: piscar .3s ease-in-out;
+}
+
+.box8.branco{
+    animation: piscar2 .3s ease-in-out;
+}
+
+@keyframes piscar{
+    50% {
+        border-bottom: 80px solid #fff;
+    }
+}
+
+@keyframes piscar2{
+    50% {
+        border-top: 80px solid #fff;
+    }
+}
+
+.carinha{
+    background: #3d3d3d;
+    border-radius: 50%;
+    color: #fff;
+}
+
+.contagem{
+    text-align: center;
+    font-size: 60px;
+}
+
+.olhos:before,.olhos:after{
+    content:"";
+    position: absolute;
+    top: 52%;
+    width: 20px;
+    height: 20px;
+    background: #262626;
+    border-radius: 50%;
+    transition: 0.5s;
+}
+
+.olhos:before{
+    left: 39%;
+}
+
+.olhos:after{
+    right: 39%;
+}
+
+.boca{
+    position: absolute;
+    width: 40px;
+    height: 155px;
+    border-bottom: 8px solid #262626;
+    border-radius: 0;
+    transition: 0.5s;
+    top: 20%;
+    left: 42%;
+}
+
+.olhos.hide{
+    display:none;
+}
+
+.boca.hide{
+    display:none;
+}
+
+.contagem.hide{
+    display:none;
+}
+
+.carinha.acerto{
+    animation: sorrir .6s ease-in-out;
+}
+
+.boca.acerto{
+    animation: sorrir2 .6s ease-in-out;
+}
+
+.carinha.erro{
+    animation: triste .6s ease-in-out;
+}
+
+.boca.erro{
+    animation: triste2 .6s ease-in-out;
+}
+
+@keyframes sorrir{
+    50%{
+        background: #22D46C;
+    }
+}
+
+@keyframes sorrir2{
+    50%{
+        border-radius: 11%;
+
+    }
+}
+
+@keyframes triste{
+    50%{
+        background: #FC3A64;
+    }
+}
+
+@keyframes triste2{
+    50%{
+        border-radius: 11%;
+        top: 68.5%;
+        transform: rotateX(-200deg);
+    }
+}
+
+.reload{
+    background: #3d3d3d;
+    color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 350px;
+    width: 100%;
+}
+
+.reload{
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%) scale(0.9);
+}
+
+.reload.show{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.reload .gameover{
+    font-size: 25px;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+}
+
+.reload .gameover br{
+    color: #fff;
+}
+
+.reload .btn{
+    display: flex;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+.reload .btn button{
+    width: 100%;
+    padding: 8px 20px;
+    border: none;
+    font-size: 18px;
+    font-weight: 500;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
