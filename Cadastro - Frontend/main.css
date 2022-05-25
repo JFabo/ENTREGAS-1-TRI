@@ -1,0 +1,164 @@
+:root {
+    font-family: 'consolas';
+    --ascent-color: #3d3d3d;
+    --background-color: #262626;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-color: var(--background-color);
+}
+
+header {
+    padding: .25em;
+    height: 2em;
+    color: #fff;
+    text-align: center;
+    background-color: var(--ascent-color);
+}
+
+main {
+    display: flex;
+    padding-top: 20px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.action-bar{
+    transition: all 0.3s ease;
+    width: 100%;
+    border-radius: 5px;
+    padding: 20px 25px 25px;
+    max-width: 330px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: #fff;
+}
+
+.action-bar p{
+    padding-right: 1em;
+    color:#262626;
+    font-size: 19px;
+}
+
+.action-bar button{
+    width: 100%;
+    padding: 8px 0;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border: 1px solid;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    background-color: #3d3d3d;
+    color:#fff;
+}
+
+button:hover{
+    transform: scale(0.95);
+}
+
+.modal {
+    background-color: #fff;
+    color:#262626;
+    border-radius: 5px;
+    padding: 1em;
+    margin: 2em;
+    position: relative;
+}
+
+.modal .bt-close {
+    position: absolute;
+    height: 2em;
+    width: 2em;
+    right: -.5em;
+    top: -.5em;
+    border: none;
+    border-radius: 50%;
+    color: #fff;
+    background-color: #D62F0F;
+    cursor: pointer;
+}
+
+.modal h1, .mod-search h1 {
+    display: block;
+    border-bottom: 1px solid #3d3d3d;
+    margin-bottom: .5em;
+    padding-top: .5em;
+    margin: 0 0 .25em 0;
+    padding: 0;
+}
+
+.modal form > div {
+    margin-bottom: 1em;
+    background-color: #3d3d3d;
+    color: white;
+    border-radius: 3px;
+}
+
+.modal form > div > label {
+    padding-left: 2px;
+    display: block;
+}
+
+.modal form > div > input {
+    width: 100%;
+    color: #3d3d3d;
+}
+
+.modal div.action {
+    display: flex;
+    justify-content: flex-end;
+    border-top: 1px solid #3d3d3d;
+    margin-top: .5em;
+    padding-top: .5em;
+}
+
+.modal div.action>button{
+    background-color: #58CC67;
+    font-size: 17px;
+    color: #262626;
+    border: none;
+    cursor: pointer;
+}
+
+.mod-search{
+    background-color: #fff;
+    color:#262626;
+    border-radius: 5px;
+    padding: 1em;
+    margin: 2em;
+    position: relative;
+}
+
+.mod-search label{
+    padding-left: 1em;
+    width: 100%;
+    padding-right: 1em;
+    background-color: #3d3d3d;
+    color: #fff;
+    display: block;
+}
+
+.mod-search>input{
+    width: 100%;
+    color: #3d3d3d;
+}
+
+.mod-search>button{
+    margin-top: 7px;
+    background-color: #3d3d3d;
+    font-size: 16px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
